@@ -331,33 +331,15 @@ async def get_aggregated_data(start_date: str, end_date: str,
 <p>Unfortunately, due to the technological castrations and over-the-top safety guardrails that OpenAi have placed on GPT-4. Our prompts need to be a little "extreme" if we want it to do anything advanced (That is why it is once again advised to use a open-source LLM if you have the resources and capital instead of GPT-4)</p>
 
 
-<h2>Using the "extreme grandma prompt"</h2>
-<head>
-    <style>
-        .image-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr); 
-            grid-gap: 10px; 
-            max-width: 800px; 
-            margin: auto; 
-        }
-        .image-grid img {
-            width: 100%; 
-            height: 200px; 
-            object-fit: contain; 
-            background-color: black; 
-        }
-    </style>
-</head>
-<body>
-    <div class="image-grid">
-        <img src="images/chatgpt_prompt_1.png" alt="First Image">
-        <img src="images/chatgpt_demo_1.png" alt="Second Image">
-        <img src="images/chatgpt_demo_2.png" alt="Third Image">
-        <img src="images/chatgpt_demo_3.png" alt="Fourth Image">
-    </div>
-</body>
-<p> Even though the weather forecast failed miserably, we are still capable of acheving some form of results (This could be due to the fact that the data inside of the MongoDB isn't "real" temp data in the sense that certain temperature values where detected by using a heat gun or dipping the temp sensor in a glass of ice cubes. We essentially force the temp-sensor to pick up certain tempereture ranges)</p>
+<h2 style="text-align: center;">Using the "extreme grandma prompt"</h2>
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); grid-gap: 10px; max-width: 800px; margin: auto;">
+    <img src="images/chatgpt_prompt_1.png" alt="First Image" style="width: 100%; height: 200px; object-fit: contain; background-color: black;">
+    <img src="images/chatgpt_demo_1.png" alt="Second Image" style="width: 100%; height: 200px; object-fit: contain; background-color: black;">
+    <img src="images/chatgpt_demo_2.png" alt="Third Image" style="width: 100%; height: 200px; object-fit: contain; background-color: black;">
+    <img src="images/chatgpt_demo_3.png" alt="Fourth Image" style="width: 100%; height: 200px; object-fit: contain; background-color: black;">
+</div>
+<p> Even though the weather forecast failed miserably, we are still capable of achieving some form of results (This could be due to the fact that the data inside of the MongoDB isn't "real" temp data in the sense that certain temperature values were detected by using a heat gun or dipping the temp sensor in a glass of ice cubes. We essentially force the temp-sensor to pick up certain temperature ranges)</p>
+
 
 
 <h2>Using a normal prompt</h2>
@@ -429,5 +411,5 @@ async def get_aggregated_data(start_date: str, end_date: str,
 
 <li><p> It would have to be fun and interesting to host a Open Source model in the cloud that is fintuned for function calling: <a href="https://huggingface.co/Trelis/Llama-2-7b-chat-hf-function-calling">Trelis/Llama-2-7b-chat-hf-function-calling</a>. However due to limitations in resources & limited capital this wasn't possible</p></li>
 
-<li><p> Finnally, the last part that unfortunetaly didn't get implemented was websocket functionalites on our live API. Hosting a simple HTML page locally</p></li>
+<li><p> Finnally, the last part that unfortunetaly didn't get implemented was websocket functionalites on our live API. Hosting a simple HTML page locally does work however. Feel free to test it using the vizualise_flask.py</p></li>
 </ul>
