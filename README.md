@@ -338,6 +338,7 @@ async def get_aggregated_data(start_date: str, end_date: str,
 | ![First Image](images/chatgpt_prompt_1.png) | ![Second Image](images/chatgpt_demo_1.png) |
 | ![Third Image](images/chatgpt_demo_2.png) | ![Fourth Image](images/chatgpt_demo_3.png) |
 
+<p> Even though the weather forecast failed miserably, we are still capable of acheving some form of results (This could be due to the fact that the data inside of the MongoDB isn't "real" temp data in the sense that certain temperature values where detected by using a heat gun or dipping the temp sensor in a glass of ice cubes. We essentially force the temp-sensor to pick up certain tempereture ranges)</p>
 
 
 
