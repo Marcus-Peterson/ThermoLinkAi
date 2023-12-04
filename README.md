@@ -331,14 +331,11 @@ async def get_aggregated_data(start_date: str, end_date: str,
 <p>Unfortunately, due to the technological castrations and over-the-top safety guardrails that OpenAi have placed on GPT-4. Our prompts need to be a little "extreme" if we want it to do anything advanced (That is why it is once again advised to use a open-source LLM if you have the resources and capital instead of GPT-4)</p>
 
 
-<h2 style="text-align: center;">Using the "extreme grandma prompt"</h2>
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); grid-gap: 10px; max-width: 800px; margin: auto;">
-    <img src="images/chatgpt_prompt_1.png" alt="First Image" style="width: 100%; height: 200px; object-fit: contain; background-color: black;">
-    <img src="images/chatgpt_demo_1.png" alt="Second Image" style="width: 100%; height: 200px; object-fit: contain; background-color: black;">
-    <img src="images/chatgpt_demo_2.png" alt="Third Image" style="width: 100%; height: 200px; object-fit: contain; background-color: black;">
-    <img src="images/chatgpt_demo_3.png" alt="Fourth Image" style="width: 100%; height: 200px; object-fit: contain; background-color: black;">
-</div>
-<p> Even though the weather forecast failed miserably, we are still capable of achieving some form of results (This could be due to the fact that the data inside of the MongoDB isn't "real" temp data in the sense that certain temperature values were detected by using a heat gun or dipping the temp sensor in a glass of ice cubes. We essentially force the temp-sensor to pick up certain temperature ranges)</p>
+| | |
+|:-------------------------:|:-------------------------:|
+| ![First Image](images/chatgpt_prompt_1.png) | ![Second Image](images/chatgpt_demo_1.png) |
+| ![Third Image](images/chatgpt_demo_2.png) | ![Fourth Image](images/chatgpt_demo_3.png) |
+
 
 
 
