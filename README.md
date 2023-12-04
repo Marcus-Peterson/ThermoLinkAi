@@ -349,7 +349,7 @@ async def get_aggregated_data(start_date: str, end_date: str,
 | ![First Image](images/normal_prompt_1.png) | ![Second Image](images/normal_prompt_2.png) |
 | ![Third Image](images/normal_prompt_3.png) | ![Fourth Image](images/normal_prompt_4.png) |
 
-If GPT-4 starts refusing to do as you are told, the advice is to simply start a new conversation, due to the fact that the context window is so high. Later down the conversation, GPT-4 might refuse to do seemingly mundane and none-controversial tasks. In the LLM space we call this the "refusing-circle-of-doom"
+If GPT-4 starts refusing to do what you ask of it, the advice is to simply start a new conversation, due to the fact that the context window is so high. Later down the conversation, GPT-4 might refuse to do seemingly mundane and none-controversial tasks. In the LLM space we call this the "refusing-circle-of-doom"
 
 
 
