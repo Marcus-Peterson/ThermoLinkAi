@@ -331,6 +331,7 @@ async def get_aggregated_data(start_date: str, end_date: str,
 <p>Unfortunately, due to the technological castrations and over-the-top safety guardrails that OpenAi have placed on GPT-4. Our prompts need to be a little "extreme" if we want it to do anything advanced (That is why it is once again advised to use a open-source LLM if you have the resources and capital instead of GPT-4)</p>
 
 ### Using the "Extreme Grandma Prompt"
+**prompt: **
 | | |
 |:-------------------------:|:-------------------------:|
 | ![First Image](images/chatgpt_prompt_1.png) | ![Second Image](images/chatgpt_demo_1.png) |
@@ -350,33 +351,15 @@ If GPT-4 starts refusing to do as you are told, the advice is to simply start a 
 
 
 
-<h2>However GPT-4 isn't an entirely useless piece of software</h2>
-<p><bold>prompt: "I want you to get temperature data (10 readings) and give me a stack chart using matplotlib. Remember to not forget A SINGLE TEMPERETURE READING in your code. Don't be lazy"</bold></p>
-<head>
-    <style>
-        .image-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr); 
-            grid-gap: 10px; 
-            max-width: 800px; 
-            margin: auto; 
-        }
-        .image-grid img {
-            width: 100%; 
-            height: 450px; 
-            object-fit: contain; 
-            background-color: black; 
-        }
-    </style>
-</head>
-<body>
-    <div class="image-grid">
-        <img src="images/temp_chart_1.png" alt="First Image">
-        <img src="images/temp_chart_2.png" alt="Second Image">
-        <img src="images/temp_chart_3.png" alt="Third Image">
-        <img src="images/temp_chart_4.png" alt="Fourth Image">
-    </div>
-</body>
+## However GPT-4 isn't an entirely useless piece of software
+
+**prompt: "I want you to get temperature data (10 readings) and give me a stack chart using matplotlib. Remember to not forget A SINGLE TEMPERATURE READING in your code. Don't be lazy"**
+
+| | |
+|:-------------------------:|:-------------------------:|
+| ![First Image](images/temp_chart_1.png) | ![Second Image](images/temp_chart_2.png) |
+| ![Third Image](images/temp_chart_3.png) | ![Fourth Image](images/temp_chart_4.png) |
+
 
 
 # Final thoughts & Conclusions
