@@ -295,7 +295,7 @@ async def get_aggregated_data(start_date: str, end_date: str,
 
 <li><h2>3: Easy deployment</h2></li>
 <h4> Deployment on Replit is straightforward</h4>
-<p>Unlike services such as heroku, Azure, AWS. In which you have to setup a workflow (arguably, this is the better solution. Since it allows for a more streamlined CI/CD). But due to the minimal proccessing power that was required for this API to function, I decided that Replit was the better choice. And first and foremost <p><bold>cheaper</bold></p>. Other than pressing the deploy button, it isnt much to it.</p>
+<p>Unlike services such as heroku, Azure, AWS. In which you have to setup a workflow (arguably, this is the better solution. Since it allows for a more streamlined CI/CD). But due to the minimal proccessing power that was required for this API to function, I decided that Replit was the better choice. And first and foremost: cheaper. Other than pressing the deploy button, it isnt much to it.</p>
 </ul>
 <br />
 
