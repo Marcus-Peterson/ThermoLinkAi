@@ -39,6 +39,8 @@ Author: Marcus Peterson
 #### GPT's have a slightly different use case than to just simply be a ChatGPT with custom instructions. What differs GPT's from the previous implementations is the fact that we now can add ***actions*** to it (and custom data, which is less interesting). 
 #### This means we can connect the GPT's to more than just 3 API's (The max number of plug-ins avaiable in a concurrent chat is 3). And as of date (2023-11-26) there is no indication that this is limited to only external API:s that you yourself have built (As far as the available information shows you only need to provide a OpenAPI schema and a privacy policy link in the actions tab when you're building your GPT). <img src = "images/build_gpt_instructions.png">
 #### The Auth is only needed for the API's that have token-access only implemented
+#### 2023-12-05 Something that was discoverd later when trying to use the alpha Vantage API (It's a free to use stock api, that was used for another project) simply writing a OpenAPI schema and providing an API-key did not work as intended. ChatGPT for some reason could not connect to it, or simply said that it couldn't. There have been several bugs reported to the OpenAi discord server, similiar to this (Yeah, I reported it):
+<a href="https://discord.com/channels/974519864045756446/1180096489612136448">Custom GPT's unable to retrieve images</a>
  
 #### So if you have a favorite API that you want chatGPT to use, you don't need to host your own service that connects to this API and then this service in turn is connected to ChatGPT
 #### NOTE: This presumes that you have access to said API either through a access token or other credentials (If the API doesn't require an access token, you can ignore this note). 
