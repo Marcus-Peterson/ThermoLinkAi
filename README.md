@@ -330,7 +330,7 @@ async def get_aggregated_data(start_date: str, end_date: str,
 
 <p>Unfortunately, due to the technological castrations and over-the-top safety guardrails that OpenAi have placed on GPT-4. Our prompts need to be a little "extreme" if we want it to do anything advanced (That is why it is once again advised to use a open-source LLM if you have the resources and capital instead of GPT-4)</p>
 
-## Using the "Extreme Grandma Prompt"
+### Using the "Extreme Grandma Prompt"
 | | |
 |:-------------------------:|:-------------------------:|
 | ![First Image](images/chatgpt_prompt_1.png) | ![Second Image](images/chatgpt_demo_1.png) |
@@ -339,33 +339,15 @@ async def get_aggregated_data(start_date: str, end_date: str,
 
 
 
-<h2>Using a normal prompt</h2>
-<head>
-    <style>
-        .image-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr); 
-            grid-gap: 10px; 
-            max-width: 800px; 
-            margin: auto; 
-        }
-        .image-grid img {
-            width: 100%; 
-            height: 200px; 
-            object-fit: contain; 
-            background-color: black; 
-        }
-    </style>
-</head>
-<body>
-    <div class="image-grid">
-        <img src="images/normal_prompt_1.png" alt="First Image">
-        <img src="images/normal_prompt_2.png" alt="Second Image">
-        <img src="images/normal_prompt_3.png" alt="Third Image">
-        <img src="images/normal_prompt_4.png" alt="Fourth Image">
-    </div>
-</body>
-<p> If GPT-4 starts refusing to do as you are told, the advice is to simply start a new conversation, due to the fact that the context window is so high. Later down the conversation, GPT-4 might refuse to do seemingly mundane and none-controversial tasks. In the LLM space we call this the "refusing-circle-of-doom"</p>
+### Using a normal prompt
+
+| | |
+|:-------------------------:|:-------------------------:|
+| ![First Image](images/normal_prompt_1.png) | ![Second Image](images/normal_prompt_2.png) |
+| ![Third Image](images/normal_prompt_3.png) | ![Fourth Image](images/normal_prompt_4.png) |
+
+If GPT-4 starts refusing to do as you are told, the advice is to simply start a new conversation, due to the fact that the context window is so high. Later down the conversation, GPT-4 might refuse to do seemingly mundane and none-controversial tasks. In the LLM space we call this the "refusing-circle-of-doom"
+
 
 
 <h2>However GPT-4 isn't an entirely useless piece of software</h2>
