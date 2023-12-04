@@ -5,11 +5,11 @@ Docs & API testing visit: https://arduino-temp-api.replit.app/docs
 
 Author: Marcus Peterson
 
-## 🗎 Name of project: ThermoLinkAi 🤖
-
 <div align="center">
+    <h1>🗎 Name of project: ThermoLinkAi 🤖</h1>
     <img src="images/thermolink_ai_logo.png" width="480">
 </div>
+
 
 
 ## Introduction 📖
