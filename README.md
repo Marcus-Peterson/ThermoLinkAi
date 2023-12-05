@@ -88,11 +88,11 @@ As the meme would imply, using serial communication was the easiest solution to 
 <img src = "images/python_code_snippet.png">
 
 
-<h3>Video Demonstration</h3>
-<video width="1080" height="720" controls>
-  <source src="images/compressed_video.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+### Video Demonstration
+
+[![Video Link](images/snowy_arduino.png)](https://www.youtube.com/watch?v=kqWtZZ0pnQU)
+
+
 
 
 
