@@ -399,7 +399,7 @@ If GPT-4 starts refusing to do what you ask of it, the advice is to simply start
 #### 3.0: When the data has been received by the Arduino Temp API, the data is safely sent to the Azure MongoDB database, through a connection string that is securely stored and handled by Replit's "secrets" solution. 
 #### 3.1: This also applies for the process of dataggreation, and other database operations that involve fetching data from the Azure MongoDB 
 
-<img src = "images/flask_graph">
+<img src = "images/flask_graph.png">
 
 #
 #
