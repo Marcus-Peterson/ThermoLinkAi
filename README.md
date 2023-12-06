@@ -13,10 +13,10 @@ Author: Marcus Peterson
 
 
 ## Introduction 📖
-#### The idea for this project came about during the advent of OpenAi's release of the so called GPTs: https://openai.com/blog/introducing-gpts
+#### The idea for this project came about during OpenAi's release of the so called GPTs: https://openai.com/blog/introducing-gpts
 
 <picture>
-    <img src = "images/arduino-temp-project.png">
+    <img src = "images/arduino-temp-project-v2.png">
 </picture>
 
 ##### 1.1. The Arduino detects temperatures using the DS18b20 digital Tempereture Probe sensor
@@ -28,6 +28,9 @@ Author: Marcus Peterson
 #
 ##### 3.1 The Arduino temp API handles the insertion of the data to a MongoDB hosted on Azure *(Note, there is no schema validation present due to scalability issues or the fact that the manager of this project doesn't want to refactor code that already works, as of date 2023-11-26. There will be another Arduino system integrated to this project that will be place outdoors in the near future*)
 ##### 3.2 Whenever there is a request to one of the available endpoints. The API makes a database operation on the Azure Cosmos DB
+##### 3.3 Every 24 hour a Data Factory aggregates the data using a pipeline called "CopyPipeline" and stores it for cold storage. This also ensure better scalability of our MongoDB (When data gets copied, we can safely clean the entire database without worrying about important data being gone forever)
+##### 3.4 Scalability can be acheived by using Docker, it was not used for this project. But was a consideration, during the initial development stages. Azure provides several solutions for this (Docker on Azure). If docker was used, that would ensure a more streamlined vertical scaling capabilities. And also make the Arduino Temp API platform independent. (Might be implemented later down the line 2023-12-06) 
+
 #
 ##### 4.1 ChatGPT (Specifically the ArduinoTempGPT) can only make GET requests
 ##### 4.2 Once ChatGPT has requested data through one of the GET endpoints the users requested data gets displayed in the chat
@@ -318,7 +321,22 @@ async def get_aggregated_data(start_date: str, end_date: str,
 }
 ```
 <p> The data itself is stored as a BSON object (Binary JSON) in a Mongo Database, like standard JSON it stores data in key:value pairs. Ands structurally it is similiar. With some key differences being that BSON encodes type and length information, which allows it to be traversed more quickly compared to JSON. Bson has some native-data types such as dates and binary data. This is core to how MongoDB stores data </p>
+<p> Besides the data being readily available for our API, our Azure Cosmos MongoDB also work as a cold storage </p>
+<h2> Azure data factory</h2>
 
+
+<img src = "images/azure_factory.png">
+<p> For better scalability and long term storage, an Azure factory was set up. The Azure Data factory studio presents many opportunities for storing, transforming, create pipelines and SQL Server Integration Services (SSIS)</p>
+
+<img src = "images/schedule_factory_2.png" width = "400" height = "500"/>
+
+#### Here we have added a trigger that runs once every 24 hour, this is our pipeline that copies our data to a **SourceDataset_sip** our linked service is a **AzureDataLakeStorage** and finally get saved in folder called **outputfolder**
+<img src = "images/factory_resource.png">
+
+#### Since our data is originally in BSON format, the pipeline handles the binary conversion to JSON
+
+#
+#
 
 <div style="display: flex; align-items: center;">
   <h1 style="margin: 0; padding-right: 10px;">ChatGPT interface</h1>
@@ -326,6 +344,9 @@ async def get_aggregated_data(start_date: str, end_date: str,
 </div>
 <img src = "images/arduino_temp_image.png">
 <p> Using a Large Language Model (GPT-4) as our intreface opens up many opportunities for different types of data exploration.</p>
+
+
+
 
 <h2> Example below I have instructed ChatGPT to do a weather forecast using the scikit-learn library that is a part of it's python environement</h2>
 
@@ -345,7 +366,7 @@ async def get_aggregated_data(start_date: str, end_date: str,
 
 
 ### Using a normal prompt
-**I want you to fetch data from the API and using advanced data analysis available in this environment make a weather forecast**
+# prompt: **I want you to fetch data from the API and using advanced data analysis available in this environment make a weather forecast**
 
 | | |
 |:-------------------------:|:-------------------------:|
@@ -358,7 +379,7 @@ If GPT-4 starts refusing to do what you ask of it, the advice is to simply start
 
 ## However GPT-4 isn't an entirely useless piece of software
 
-**prompt: "I want you to get temperature data (10 readings) and give me a stack chart using matplotlib. Remember to not forget A SINGLE TEMPERATURE READING in your code. Don't be lazy"**
+# prompt: **"I want you to get temperature data (10 readings) and give me a stack chart using matplotlib. Remember to not forget A SINGLE TEMPERATURE READING in your code. Don't be lazy"**
 
 | | |
 |:-------------------------:|:-------------------------:|
@@ -366,6 +387,22 @@ If GPT-4 starts refusing to do what you ask of it, the advice is to simply start
 | ![Third Image](images/temp_chart_3.png) | ![Fourth Image](images/temp_chart_4.png) |
 
 
+# Security
+<img src = "images/securit_flow.png">
+
+#### 1.0: The serial communicator (python script) script reads data from the Arduino Rev 4
+#### 1.1: The scripts authenticates via an API-key
+#
+#### 2.0: If the API (Arduino Temp API) key is valid, the data gets sent via HTTPS (A more secure version of HTTP)
+#### 2.1 The API handles storage of the valid in an encrypted storage solution provided by Replit. Through the API-key, Arduino Temp API validates that the data the script wants to send to the database, is authorized via the API-key
+#
+#### 3.0: When the data has been received by the Arduino Temp API, the data is safely sent to the Azure MongoDB database, through a connection string that is securely stored and handled by Replit's "secrets" solution. 
+#### 3.1: This also applies for the process of dataggreation, and other database operations that involve fetching data from the Azure MongoDB 
+
+<img src = "images/flask_graph">
+
+#
+#
 
 # Final thoughts & Conclusions
 <p>The project was a fun experience, however there was certain realisations:</p>
